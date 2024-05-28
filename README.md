@@ -91,7 +91,7 @@ This project showcases various skills and methodologies, including:
 
 ## Image
 
-![Welcome Section](img/welcome.png)
+![Welcome Section](img/home.png)
 ![Virtual Tour Section](img/vt.png)
 ![Contact Section](img/contact.png)
 
