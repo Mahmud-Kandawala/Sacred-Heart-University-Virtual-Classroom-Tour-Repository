@@ -25,3 +25,29 @@ The primary motivation for this project was to prepare for an upcoming task invo
 This project is designed to create a virtual tour of a classroom at Sacred Heart University using Matterport technology. The purpose is to provide an immersive, interactive experience that allows users to navigate through the classroom space as if they were physically present. This kind of virtual tour can be beneficial for prospective students, faculty members, and other stakeholders to get a feel of the campus facilities remotely.
 
 ## Project Overview
+
+### What It Does
+
+- Provides a 3D virtual tour of a classroom at Sacred Heart University.
+- Allows users to walk through the classroom, zoom in on details, and explore the space from different angles.
+- Presents an immersive experience that mimics a real-life visit to the classroom.
+
+### Data Flow
+
+1) **Capture and Upload**: The classroom was captured using a Matterport camera and uploaded to the Matterport platform.
+2) **Processing**: Matterport processes the 3D scan to create a navigable 3D model.
+3) **Embedding**: The 3D model is embedded into a single HTML page using an iframe.
+4) **User Interaction**: Users interact with the 3D model directly on the webpage, navigating through the classroom using Matterport's built-in controls.
+
+### Prioritization
+
+#### Tackled:
+- Creating a high-quality 3D scan of the classroom.
+- Embedding the Matterport model into a single HTML page.
+- Ensuring the webpage is visually appealing and user-friendly.
+- Testing the webpage for responsiveness and performance.
+
+#### Not Tackled:
+- Extensive backend integration, as the focus was on frontend presentation.
+- Multiple pages or complex file structures, as the project scope was limited to a single-page demonstration.
+
