@@ -75,4 +75,39 @@ This project showcases various skills and methodologies, including:
 - **User Experience**: Providing clear instructions and intuitive controls is crucial for enhancing user interaction with the virtual tour.
 - **Performance Optimization**: Ensuring the 3D model loads efficiently and the webpage performs well across different devices and browsers.
 
+## Problems Faced and Solutions
+
+### Problem: Initial Embedding Issues
+- **Issue**: The Matterport model was not displaying correctly within the iframe.
+- **Solution**: Adjusted the iframe settings and ensured the correct model ID was used.
+
+### Problem: Responsiveness
+- **Issue**: The webpage was not responsive on smaller devices.
+- **Solution**: Implemented responsive design principles using CSS media queries to ensure the layout adapts to different screen sizes.
+
+### Problem: User Interaction
+- **Issue**: Users found it challenging to navigate the 3D model initially.
+- **Solution**: Added clear instructions and ensured the Matterport controls were easily accessible and intuitive.
+
+## Image
+
+![Welcome Section](img/welcome.png)
+![Virtual Tour Section](img/vt.png)
+![Contact Section](img/contact.png)
+
+## Links
+
+- [Matterport 3D Model](https://my.matterport.com/show/?m=PTuY9kvVDUc)
+
+## Run
+
+To run the project:
+1) Download the HTML file.
+2) Open the HTML file in a web browser.
+3) The website will display, allowing you to explore the virtual classroom tour.
+
+
+## Conclusion
+
+This project, though focused on a single HTML, CSS, and Javascript page, demonstrates the ability to create a professional and immersive virtual tour experience. It highlights the importance of planning, user experience design, and technical skills in web development and 3D modeling. This exercise has been invaluable in preparing for more complex projects, such as the anticipated task for Igor Sikorsky's office, and showcases the capability to handle similar challenges in a professional setting.
 
