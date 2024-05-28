@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sacred Heart University - Virtual Classroom Tour</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      font-family: 'Arial', sans-serif;
+      background-color: #f5f5f5;
+      color: #990000;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+    header {
+      background-color: #990000;
+      color: #ffffff;
+      padding: 20px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      transition: background-color 0.3s;
+    }
+    header.sticky {
+      background-color: #660000;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 10px;
+    }
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 1.1em;
+      transition: color 0.3s;
+    }
+    nav a:hover, nav a.active {
+      color: #ffdd57;
+    }
+    .hero {
+      background: url('https://www.sacredheart.edu/media/shu-media/homepage/West-Campus---East-Atrium-1220x686.jpg') no-repeat center center;
+      background-size: cover;
+      height: 60vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #ffffff;
+      text-align: center;
+      position: relative;
+      margin: 20px 0;
+      background-attachment: fixed;
+    }
+    .hero h2 {
+      font-size: 3em;
+      margin: 0;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 10px 20px;
+      border-radius: 5px;
+      animation: fadeIn 2s;
+    }
+    .container {
+      padding: 20px;
+      max-width: 1200px;
+      margin: 20px auto;
+      background-color: #ffffff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      text-align: center;
+    }
+    .section {
+      margin-bottom: 40px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s, transform 0.6s;
+    }
+    .section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .section h2 {
+      font-size: 2em;
+      border-bottom: 2px solid #990000;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+    .section p {
+      font-size: 1.2em;
+      line-height: 1.6;
+    }
+    .matterport {
+      width: 100%;
+      height: 500px;
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .cta {
+      background-color: #990000;
+      color: #ffffff;
+      padding: 20px;
+      text-align: center;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      transition: transform 0.3s;
+    }
+    .cta:hover {
+      transform: scale(1.05);
+    }
+    .cta h3 {
+      margin: 0;
+      font-size: 2em;
+    }
+    .cta p {
+      margin: 10px 0 0;
+      font-size: 1.2em;
+    }
+    footer {
+      background-color: #990000;
+      color: #ffffff;
+      text-align: center;
+      padding: 10px 0;
+      width: 100%;
+    }
+    footer p {
+      margin: 0;
+    }
+    #scrollToTopBtn {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 99;
+      font-size: 18px;
+      border: none;
+      outline: none;
+      background-color: #990000;
+      color: white;
+      cursor: pointer;
+      padding: 15px;
+      border-radius: 10px;
+      transition: background-color 0.3s;
+    }
+    #scrollToTopBtn:hover {
+      background-color: #555;
+    }
+    .loading-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.9);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 10000;
+      transition: opacity 0.3s;
+    }
+    .loading-overlay.hidden {
+      opacity: 0;
+      visibility: hidden;
+    }
+    .loading-spinner {
+      border: 12px solid #f3f3f3;
+      border-top: 12px solid #990000;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    @media (max-width: 768px) {
+      .hero h2 {
+        font-size: 2em;
+      }
+    }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="loading-overlay" id="loadingOverlay">
+    <div class="loading-spinner"></div>
+  </div>
+
+  <header>
+    <h1>Sacred Heart University</h1>
+    <p>Virtual Classroom Tour</p>
+    <nav>
+      <a href="#welcome" class="nav-link">Welcome</a>
+      <a href="#tour" class="nav-link">Tour</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <h2>Explore Our Modern Classrooms</h2>
+  </div>
+
+  <div class="container">
+    <div class="section" id="welcome">
+      <h2>Welcome</h2>
+      <p>
+        Welcome to Sacred Heart University's virtual classroom tour. We are excited to show you our modern and innovative learning spaces designed to foster a dynamic and engaging educational experience.
+      </p>
+      <p>
+        At Sacred Heart University, we believe in providing our students with the best facilities and resources to help them succeed. Our classrooms are equipped with the latest technology and designed to create an optimal learning environment.
+      </p>
+    </div>
+
+    <div class="section" id="tour">
+      <h2>Virtual Tour</h2>
+      <!-- Matterport 3D Model Embed -->
+      <iframe width='853' height='480' src='https://my.matterport.com/show/?m=PTuY9kvVDUc' frameborder='0' allowfullscreen allow='xr-spatial-tracking'></iframe>
+    </div>
+
+    <div class="cta" id="contact">
+      <h3>Contact Us</h3>
+      <p>For more information or to schedule a visit, please contact us at:</p>
+      <p>Email: info@sacredheart.edu</p>
+      <p>Phone: (123) 456-7890</p>
+      <p>Address: 5151 Park Avenue, Fairfield, CT 06825</p>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 Sacred Heart University. All rights reserved.</p>
+  </footer>
+
+  <button id="scrollToTopBtn" title="Go to top">Top</button>
+
+  <script>
+    // Smooth Scroll to Top Button
+    const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        scrollToTopBtn.style.display = "block";
+        document.querySelector('header').classList.add('sticky');
+      } else {
+        scrollToTopBtn.style.display = "none";
+        document.querySelector('header').classList.remove('sticky');
+      }
+      highlightCurrentSection();
+    }
+
+    scrollToTopBtn.addEventListener('click', function() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    });
+
+    // Scroll Animation
+    const sections = document.querySelectorAll('.section');
+    const options = {
+      threshold: 0.5
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      });
+    }, options);
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+
+    // Highlight Current Section in Navigation
+    const navLinks = document.querySelectorAll('.nav-link');
+    function highlightCurrentSection() {
+      let index = sections.length;
+
+      while (--index && window.scrollY + 50 < sections[index].offsetTop) {}
+      navLinks.forEach((link) => link.classList.remove('active'));
+      navLinks[index].classList.add('active');
+    }
+
+    // Hide Loading Overlay
+    window.addEventListener('load', () => {
+      document.getElementById('loadingOverlay').classList.add('hidden');
+    });
+
+    // Smooth Scroll for Navigation Links
+    document.querySelectorAll('nav a').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Tooltips for Buttons
+    const tooltips = document.querySelectorAll('.cta-button');
+    tooltips.forEach(button => {
+      button.setAttribute('title', 'Click to start the virtual tour');
+    });
+  </script>
+</body>
+</html>
