@@ -51,3 +51,28 @@ This project is designed to create a virtual tour of a classroom at Sacred Heart
 - Extensive backend integration, as the focus was on frontend presentation.
 - Multiple pages or complex file structures, as the project scope was limited to a single-page demonstration.
 
+## Skills and Methodologies
+
+This project showcases various skills and methodologies, including:
+- **Web Development**: Creating a responsive and visually appealing HTML, CSS, and Javascript layout.
+- **3D Modeling**: Utilizing Matterport technology to capture and process 3D scans.
+- **UI/UX Design**: Ensuring a seamless and intuitive user experience for navigating the virtual tour.
+- **Project Management**: Prioritizing tasks and managing the project scope effectively.
+
+## Notable Features
+
+- **Interactive 3D Tour**: Users can explore the classroom in 3D, providing an engaging and realistic experience.
+- **Responsive Design**: The webpage is fully responsive, ensuring optimal viewing on various devices.
+- **Professional Presentation**: The layout and design reflect a high level of professionalism, suitable for academic and corporate environments.
+- **Smooth Scroll and Navigation**: Enhanced navigation links with smooth scrolling behavior.
+- **Loading Animation**: A loading spinner displays while the content is being loaded.
+- **Tooltips for Buttons**: Added tooltips to buttons for additional information on hover.
+- **Scroll to Top Button**: A button that allows users to quickly return to the top of the page
+
+## Lessons Learned
+
+- **Integration Challenges**: Embedding a Matterport model into a webpage requires careful consideration of iframe attributes and responsive design techniques.
+- **User Experience**: Providing clear instructions and intuitive controls is crucial for enhancing user interaction with the virtual tour.
+- **Performance Optimization**: Ensuring the 3D model loads efficiently and the webpage performs well across different devices and browsers.
+
+
